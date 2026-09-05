@@ -1,1 +1,77 @@
-(()=>{const icons=[['icon','favicon.ico?v=2',''],['icon','favicon.svg?v=2','image/svg+xml'],['icon','favicon-32x32.png?v=2','image/png']];icons.forEach(([rel,href,type])=>{if(document.head.querySelector(`link[href^="${href.split('?')[0]}"]`))return;const link=document.createElement('link');link.rel=rel;link.href=href;if(type)link.type=type;if(href.includes('32x32'))link.sizes='32x32';document.head.appendChild(link)});})();const header=document.querySelector('[data-header]')||document.querySelector('.site-header');const menuToggle=document.querySelector('[data-menu-toggle]');const nav=document.querySelector('[data-nav]');const updateHeader=()=>{if(!header)return;const isDynamic=header.hasAttribute('data-header');header.classList.toggle('scrolled',!isDynamic||window.scrollY>20)};updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});if(menuToggle&&nav){menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':''});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow=''}));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');document.body.style.overflow='';menuToggle.focus()}})}const revealItems=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1});revealItems.forEach(item=>observer.observe(item))}else{revealItems.forEach(item=>item.classList.add('visible'))}
+const header = document.querySelector('[data-header]') || document.querySelector('.site-header');
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const nav = document.querySelector('[data-nav]');
+
+const updateHeader = () => {
+  if (!header) return;
+  const alwaysSolid = header.classList.contains('inner-header');
+  header.classList.toggle('scrolled', alwaysSolid || window.scrollY > 20);
+};
+
+const closeMenu = ({ restoreFocus = false } = {}) => {
+  if (!menuToggle || !nav) return;
+  nav.classList.remove('open');
+  document.body.classList.remove('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+  menuToggle.textContent = 'Menu';
+  if (restoreFocus) menuToggle.focus();
+};
+
+const openMenu = () => {
+  if (!menuToggle || !nav) return;
+  nav.classList.add('open');
+  document.body.classList.add('menu-open');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  menuToggle.setAttribute('aria-label', 'Fermer le menu');
+  menuToggle.textContent = 'Fermer';
+};
+
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
+
+if (menuToggle && nav) {
+  menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+
+  menuToggle.addEventListener('click', () => {
+    if (nav.classList.contains('open')) closeMenu();
+    else openMenu();
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => closeMenu());
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      closeMenu({ restoreFocus: true });
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 980 && nav.classList.contains('open')) closeMenu();
+  });
+}
+
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.main-nav a[href]').forEach((link) => {
+  if (link.getAttribute('href') === currentPath) {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+  }
+});
+
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealItems.forEach((item) => observer.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('visible'));
+}
