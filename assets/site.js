@@ -14,18 +14,19 @@ if (menuToggle && nav) {
   menuToggle.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     menuToggle.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
   });
 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
       menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
   });
 }
 
 const revealItems = document.querySelectorAll('.reveal');
-
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -35,15 +36,7 @@ if ('IntersectionObserver' in window) {
       }
     });
   }, { threshold: 0.12 });
-
   revealItems.forEach((item) => observer.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add('visible'));
 }
-
-// Current accompaniment experience figure.
-document.querySelectorAll('.profile-copy p, .profile-stats strong').forEach((element) => {
-  if (element.textContent.includes('4’700')) {
-    element.textContent = element.textContent.replace('4’700', '5’000');
-  }
-});
