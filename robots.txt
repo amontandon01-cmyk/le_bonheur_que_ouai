@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amontandon01-cmyk.github.io/le_bonheur_que_ouai/sitemap.xml
