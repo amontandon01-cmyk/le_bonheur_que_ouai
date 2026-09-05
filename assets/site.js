@@ -40,3 +40,10 @@ if ('IntersectionObserver' in window) {
 } else {
   revealItems.forEach((item) => item.classList.add('visible'));
 }
+
+// Current accompaniment experience figure.
+document.querySelectorAll('.profile-copy p, .profile-stats strong').forEach((element) => {
+  if (element.textContent.includes('4’700')) {
+    element.textContent = element.textContent.replace('4’700', '5’000');
+  }
+});
