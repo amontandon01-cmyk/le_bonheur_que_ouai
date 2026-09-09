@@ -1,3 +1,4 @@
+document.documentElement.classList.add('js');
 const header = document.querySelector('[data-header]') || document.querySelector('.site-header');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const nav = document.querySelector('[data-nav]');
@@ -61,17 +62,11 @@ document.querySelectorAll('.main-nav a[href]').forEach((link) => {
   }
 });
 
-const revealItems = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealItems.forEach((item) => observer.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('visible'));
-}
+// Keep keyboard focus inside the open mobile navigation.
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab' || !nav?.classList.contains('open')) return;
+  const items = [menuToggle, ...nav.querySelectorAll('a[href]')];
+  const first = items[0], last = items[items.length - 1];
+  if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+  else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+});

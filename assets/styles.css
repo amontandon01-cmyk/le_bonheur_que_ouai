@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap');
 
 :root {
   --ink: #171714;
@@ -556,7 +555,7 @@ h1, h2, h3 {
   font-size: 10px;
 }
 
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+.reveal { opacity: 1; transform: none; }
 .reveal.visible { opacity: 1; transform: none; }
 .delay-1 { transition-delay: .08s; }
 .delay-2 { transition-delay: .16s; }
@@ -821,3 +820,59 @@ h1, h2, h3 {
   .reveal { opacity: 1; transform: none; transition: none; }
   .main-nav { transition: none; }
 }
+
+
+/* Editorial refinement and accessible progressive enhancement */
+:root { --muted: #625d54; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #a77c38; outline-offset: 6px; }
+.skip-link { position: fixed; top: 12px; left: 16px; z-index: 200; background: var(--paper); color: var(--ink); padding: 12px 20px; transform: translateY(-180%); }
+.skip-link:focus { transform: none; }
+main:focus { outline: none; }
+.hero { min-height: min(860px, 100svh); grid-template-columns: minmax(0, 1fr) 240px; gap: 48px; }
+.hero h1 { font-size: clamp(52px, 6.6vw, 100px); max-width: 900px; line-height: 1.02; }
+.hero-lead { max-width: 690px; font-size: clamp(17px, 1.4vw, 21px); }
+.hero-note span { font-size: 34px; }
+.page-hero { min-height: 560px; padding-top: 145px; padding-bottom: 65px; }
+.page-hero h1 { font-size: clamp(46px, 5.8vw, 86px); max-width: 1050px; line-height: 1.04; }
+.page-hero .breadcrumbs { color: #d4c8b4; margin-bottom: 30px; font-size: 12px; }
+.portrait-hero { padding-bottom: 0; }
+.portrait-hero h1 { font-size: clamp(42px, 4.8vw, 72px); }
+.intro h2, .section-heading h2, .content-split h2, .profile-copy h2, .contact-page h2, .clinical-box h2, .centered h2 { font-size: clamp(38px, 4vw, 62px); line-height: 1.08; }
+.section-light, .section-stone, .section-dark { padding-top: clamp(64px, 7vw, 110px); padding-bottom: clamp(64px, 7vw, 110px); }
+.route-card { transition: background-color .2s ease; }
+.route-card:hover, .route-card:focus-visible { background: #e0d6c6; }
+.route-card b { color: #57442a; }
+.practical-section h2, .related-pages h2 { font-size: clamp(36px, 4vw, 58px); max-width: 760px; }
+.practical-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; list-style: decimal-leading-zero; padding-left: 26px; margin-top: 45px; }
+.practical-steps li { padding: 18px 12px 0 4px; border-top: 1px solid var(--line); }
+.practical-steps li::marker { color: #765c35; font-size: 13px; }
+.practical-steps h3 { font-size: 30px; line-height: 1.1; }
+.practical-steps p { color: #565149; }
+.related-pages .hero-actions { margin-top: 22px; }
+.related-pages .inline-cta { margin-top: 0; }
+.photo-credits { color: #b3aea4; font-size: 12px; line-height: 1.6; }
+.footer-meta a:hover, .footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact-copy h2 { margin-bottom: 28px; }
+@media (max-width: 1100px) and (min-width: 981px) { .site-header { gap: 12px; padding-left: 22px; padding-right: 22px; } .main-nav { gap: 10px; letter-spacing: 0; } .brand-name { font-size: 18px; } .brand { gap: 8px; } }
+@media (max-width: 980px) {
+ .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 145px; }
+ .hero h1 { max-width: 750px; }
+ .page-hero { min-height: auto; padding-top: 130px; }
+ .practical-steps { grid-template-columns: 1fr; gap: 18px; }
+ html:not(.js) .site-header { position: relative; flex-wrap: wrap; }
+ html:not(.js) .menu-toggle { display: none; }
+ html:not(.js) .main-nav { position: static; inset: auto; min-height: 0; width: 100%; padding: 12px 0; visibility: visible; opacity: 1; transform: none; overflow: visible; }
+ html:not(.js) .main-nav a { font-family: 'Manrope',sans-serif; font-size: 16px; padding: 12px 0; }
+}
+@media (max-width: 640px) {
+ .hero { padding: 124px 20px 44px; gap: 34px; }
+ .hero h1 { font-size: clamp(44px, 11.5vw, 64px); }
+ .page-hero { padding: 115px 20px 48px; }
+ .page-hero h1 { font-size: clamp(40px, 10.5vw, 58px); }
+ .portrait-hero { padding-bottom: 0; }
+ .contact-page, .content-split, .profile { gap: 32px; }
+ .related-pages .hero-actions { align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
