@@ -842,3 +842,7 @@ main > .faq-section { max-width: none; padding-left: max(var(--pad), calc((100% 
 main > .long-copy.centered { max-width: none; padding-left: max(var(--pad), calc((100% - 900px) / 2)); padding-right: max(var(--pad), calc((100% - 900px) / 2)); }
 .route-section > .section-heading { max-width: none; margin-left: 0; }
 .route-section > .section-heading h2 { max-width: 960px; }
+/* Avoid a horizontal scrollbar on narrow windows with non-overlay scrollbars. */
+body { min-width: 0; }
+
+.button { border-radius: 4px; }

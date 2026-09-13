@@ -63,3 +63,11 @@ Le seuil du menu mobile passe à 1’200 px pour accueillir le lien FIDES.
 Le portrait explicite l’intelligence relationnelle à travers la pratique : écoute du contexte et des émotions, discernement, franchise, ressources et orientation professionnelle. Ces éléments proviennent de l’échange validé avec Mélanie et de son parcours. Aucun diagnostic, score psychométrique ni détail de santé personnel n’est publié. Une synthèse figure dans l’accueil, et la page FIDES relie cette posture à sa démarche.
 
 Identité visuelle : `assets/brand/logo-original.png` est la copie exacte du logo fourni par le site officiel. `logo-symbol.png` utilise sa silhouette alpha sans la redessiner, dans une teinte blanc chaud. Cette même version sert au menu et aux icônes (fond sombre pour l’onglet et les raccourcis mobiles). Les anciens favicons ont été remplacés. Les icônes, le manifeste, le CSS et le JS portent un paramètre de version pour actualiser les caches. Le manifeste reste en affichage navigateur, sans service worker ni promesse de fonctionnement hors connexion.
+
+## Navigation et contrôle visuel (13 septembre 2026)
+
+Les quatre offres sont regroupées sous un menu « Accompagnements » ; Mélanie, FIDES, FAQ et le contact restent directement accessibles. Hauteurs et marges du menu unifiées, bouton de contact sans retour à la ligne, en-têtes et contenus alignés sur un même repère. Anciennes règles CSS concurrentes du menu supprimées. Menu déroulant natif utilisable au clavier, Escape et fermeture au clic extérieur, menu mobile avec gestion du focus.
+
+Favicons PNG/ICO et icônes mobiles transparents, avec la silhouette originale en bronze. Le favicon SVG adapte la couleur du symbole au thème clair ou sombre. Aucun carré de fond.
+
+Contrôle navigateur sur des vues de 1’024, 1’280, 1’440 et 1’920 px : liens du menu hauts de 44 px, alignés, sans débordement horizontal de l’accueil. Menu déroulant et fermeture Escape vérifiés. Portrait et contact inspectés visuellement à 1’280 px ; menu mobile ouvert, déroulé et fermé à 390 px. Le contrôle à 320 px a permis de supprimer une largeur minimale du body qui provoquait un débordement avec les barres de défilement classiques. La page de contrôle temporaire a été retirée après vérification.
