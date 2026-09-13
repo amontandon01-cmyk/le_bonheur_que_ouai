@@ -77,3 +77,11 @@ La source `MELANIE-1.jpg` fournie par le propriétaire a été retrouvée : 1 63
 
 Trois tailles : 480 × 600 px (31 062 octets), 960 × 1 200 px (88 686 octets) et 1 440 × 1 800 px (182 328 octets). Les deux pages qui affichent Mélanie utilisent `srcset` et `sizes`. Le navigateur choisit selon la place disponible et la densité de l’écran. Le chargement différé reste actif sur l’accueil ; le portrait de la page Mélanie reste prioritaire. Les URL des photos portent une nouvelle version pour éviter le cache de l’ancienne image.
 
+## Méthode FIDES et confidentialité (13 septembre 2026)
+
+À la demande de Mélanie, la Méthode FIDES est présentée comme la base de tous ses accompagnements. Sa mise en pratique s’adapte à la personne, à l’environnement et au fonctionnement de chaque structure. Les listes de techniques et les formulations qui la présentaient comme facultative ont été remplacées sur les neuf pages. Graphie demandée : « Méthode FIDES ».
+
+La confidentialité est explicitée dès le premier contact, dans les présentations, les formats, les missions, les FAQ et le pied de page. Le partage éventuel d’informations avec un proche ou une structure est défini avec la personne accompagnée, dans un cadre convenu à l’avance. Aucun statut de secret professionnel, accord juridique automatique ni dispositif technique de sécurité n’est ajouté.
+
+Descriptions de pages, partages sociaux et données structurées alignés sur ces textes. Les huit réponses FAQ structurées reprennent les réponses visibles. La formule « La simplicité est la clé » reprend les mots de Mélanie.
+
