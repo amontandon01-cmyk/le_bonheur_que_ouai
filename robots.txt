@@ -1,4 +1,3 @@
-# Site de préproduction GitHub Pages
-# Ne pas indexer avant la bascule du domaine officiel.
 User-agent: *
-Disallow: /
+Allow: /
+# Préproduction : noindex dans chaque page HTML.
