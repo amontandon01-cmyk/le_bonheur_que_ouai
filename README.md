@@ -71,3 +71,9 @@ Les quatre offres sont regroupées sous un menu « Accompagnements » ; Mélanie
 Favicons PNG/ICO et icônes mobiles transparents, avec la silhouette originale en bronze. Le favicon SVG adapte la couleur du symbole au thème clair ou sombre. Aucun carré de fond.
 
 Contrôle navigateur sur des vues de 1’024, 1’280, 1’440 et 1’920 px : liens du menu hauts de 44 px, alignés, sans débordement horizontal de l’accueil. Menu déroulant et fermeture Escape vérifiés. Portrait et contact inspectés visuellement à 1’280 px ; menu mobile ouvert, déroulé et fermé à 390 px. Le contrôle à 320 px a permis de supprimer une largeur minimale du body qui provoquait un débordement avec les barres de défilement classiques. La page de contrôle temporaire a été retirée après vérification.
+## Netteté du portrait (13 septembre 2026)
+
+La source `MELANIE-1.jpg` fournie par le propriétaire a été retrouvée : 1 638 × 2 048 px, 504 859 octets. Elle remplace le fichier de 520 × 650 px et 14 926 octets qui était trop réduit pour les écrans denses. La photo est conservée sans retouche, avec redimensionnement et compression WebP de qualité 88.
+
+Trois tailles : 480 × 600 px (31 062 octets), 960 × 1 200 px (88 686 octets) et 1 440 × 1 800 px (182 328 octets). Les deux pages qui affichent Mélanie utilisent `srcset` et `sizes`. Le navigateur choisit selon la place disponible et la densité de l’écran. Le chargement différé reste actif sur l’accueil ; le portrait de la page Mélanie reste prioritaire. Les URL des photos portent une nouvelle version pour éviter le cache de l’ancienne image.
+
