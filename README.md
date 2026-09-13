@@ -57,3 +57,9 @@ Sources du contenu :
 - https://www.lebonheurqueouai.ch/formation
 
 Le seuil du menu mobile passe à 1’200 px pour accueillir le lien FIDES.
+
+## Portrait et identité visuelle (13 septembre 2026)
+
+Le portrait explicite l’intelligence relationnelle à travers la pratique : écoute du contexte et des émotions, discernement, franchise, ressources et orientation professionnelle. Ces éléments proviennent de l’échange validé avec Mélanie et de son parcours. Aucun diagnostic, score psychométrique ni détail de santé personnel n’est publié. Une synthèse figure dans l’accueil, et la page FIDES relie cette posture à sa démarche.
+
+Identité visuelle : `assets/brand/logo-original.png` est la copie exacte du logo fourni par le site officiel. `logo-symbol.png` utilise sa silhouette alpha sans la redessiner, dans une teinte blanc chaud. Cette même version sert au menu et aux icônes (fond sombre pour l’onglet et les raccourcis mobiles). Les anciens favicons ont été remplacés. Les icônes, le manifeste, le CSS et le JS portent un paramètre de version pour actualiser les caches. Le manifeste reste en affichage navigateur, sans service worker ni promesse de fonctionnement hors connexion.

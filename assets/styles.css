@@ -71,8 +71,8 @@ h1, h2, h3 {
   width: 44px;
   height: 44px;
   object-fit: contain;
-  filter: grayscale(1) brightness(3.4);
-  opacity: .95;
+  filter: none;
+  opacity: 1;
   flex: 0 0 auto;
 }
 .brand-name {
@@ -906,3 +906,17 @@ main:focus { outline: none; }
 .footer-links { flex-wrap: wrap; gap: 14px 22px; }
 @media (max-width: 1200px) { .fides-feature, .fides-hero-grid, .fides-details { grid-template-columns: 1fr; gap: 40px; } .fides-signature { border-right: 0; padding-right: 0; border-bottom: 1px solid #6f715f; padding-bottom: 24px; } .fides-signature > span { font-size: 80px; } .fides-aside { max-width: 400px; } }
 @media (max-width: 640px) { .fides-questions { grid-template-columns: 1fr; gap: 24px; } .fides-lead { font-size: 17px; } .fides-feature-copy h2 { font-size: 38px; } .fides-hero h1 { font-size: clamp(42px,11vw,62px); } .fides-details .faq-item summary { font-size: 25px; } }
+
+/* A grounded portrait: relational intelligence shown through the practice. */
+.portrait-insight { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px 90px; background: #24271f; }
+.insight-heading h2 { font-size: clamp(40px,4.5vw,70px); line-height: 1.08; }
+.insight-heading em { color: #dbc7a4; font-weight: 500; }
+.insight-heading > p:last-child { color: #d5d4c9; max-width: 460px; }
+.insight-copy { color: #e0dfd6; max-width: 680px; font-size: 18px; }
+.insight-copy p + p { margin-top: 24px; }
+.insight-principles { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px; }
+.insight-principles article { border-top: 1px solid #707465; padding-top: 26px; }
+.insight-principles h3 { font-size: 30px; line-height: 1.15; color: #fffdf8; }
+.insight-principles p { font-size: 15px; color: #d5d4c9; }
+@media (max-width: 980px) { .portrait-insight { grid-template-columns: 1fr; gap: 34px; } }
+@media (max-width: 640px) { .insight-principles { grid-template-columns: 1fr; gap: 24px; } .insight-copy { font-size: 16px; } }
