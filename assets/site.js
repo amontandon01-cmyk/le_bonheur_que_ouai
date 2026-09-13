@@ -50,7 +50,7 @@ if (menuToggle && nav) {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 980 && nav.classList.contains('open')) closeMenu();
+    if (window.innerWidth > 1200 && nav.classList.contains('open')) closeMenu();
   });
 }
 

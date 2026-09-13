@@ -1,12 +1,12 @@
 # Le Bonheur Qué Ouai
 
-Site statique de Mélanie Vonlanthen : coaching, accompagnement privé, transitions de vie, remise en mouvement et tournages / missions. Huit pages HTML, sans étape de compilation.
+Site statique de Mélanie Vonlanthen : coaching, accompagnement privé, transitions de vie, remise en mouvement et tournages / missions. Neuf pages HTML, sans étape de compilation.
 
 ## État de publication
 
-GitHub Pages sert de version de validation avant bascule du domaine officiel. Chaque page contient `noindex,follow`. Le sitemap reste vide en préproduction. `robots.txt` autorise la lecture pour permettre aux moteurs de constater `noindex` (le fichier d'un projet GitHub Pages sous un sous-chemin ne contrôle pas les robots à la racine du domaine).
+Le site officiel reste https://www.lebonheurqueouai.ch/. GitHub Pages reste durablement la version de travail publique ; aucune migration n’est prévue à ce stade. Chaque page contient `noindex,follow`. Le sitemap reste vide en préproduction. `robots.txt` autorise la lecture pour permettre aux moteurs de constater `noindex` (le fichier d'un projet GitHub Pages sous un sous-chemin ne contrôle pas les robots à la racine du domaine).
 
-Le choix du domaine et la publication définitive restent à confirmer. Ne pas activer l'indexation de deux copies identiques.
+Les changements de cette version sont publiés sur GitHub Pages pour retours. Conserver la non-indexation de cette version de travail. Ne pas relancer la question d’une migration sans demande explicite.
 
 ## Améliorations préparées
 
@@ -46,3 +46,14 @@ Huit pages : liens internes, fragments, références d'assets comparées à l'ar
 - https://developers.google.com/search/docs/crawling-indexing/block-indexing
 
 Les contenus utiles, accessibles et cohérents servent aussi les réponses IA. Aucun balisage spécifique ne garantit leur citation ou leur classement.
+
+## Intégration FIDES (13 septembre 2026)
+
+Page dédiée `methode-fides.html`, accès depuis toutes les navigations, présentation sur l’accueil, liens depuis les formats, le portrait et la FAQ. Orthographe FIDES vérifiée sur le site officiel. La présentation reprend les notions publiques de schémas, libre arbitre et rythme individuel, sans inventer un protocole ni reprendre de promesse de guérison. Les questions de réflexion sont une rédaction éditoriale, pas les étapes officielles de la méthode.
+
+Sources du contenu :
+- https://www.lebonheurqueouai.ch/coaching-personnalise
+- https://www.lebonheurqueouai.ch/portrait
+- https://www.lebonheurqueouai.ch/formation
+
+Le seuil du menu mobile passe à 1’200 px pour accueillir le lien FIDES.

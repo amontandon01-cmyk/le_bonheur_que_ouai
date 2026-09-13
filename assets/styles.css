@@ -186,7 +186,7 @@ h1, h2, h3 {
 .hero > * { position: relative; z-index: 1; }
 .hero-content { max-width: 920px; }
 .hero h1 {
-  max-width: 980px;
+  max-width: 1200px;
   margin-bottom: 28px;
   font-size: clamp(61px, 8.4vw, 132px);
 }
@@ -440,7 +440,7 @@ h1, h2, h3 {
 .editorial-list li { padding: 20px 0; border-bottom: 1px solid var(--line); }
 
 .clinical-box { max-width: none; }
-.clinical-box > * { max-width: 980px; margin-left: auto; margin-right: auto; }
+.clinical-box > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
 .clinical-box h2 { margin-bottom: 30px; }
 .clinical-box p { color: #5b564e; font-size: 18px; }
 .clinical-box.emph { border-top: 1px solid var(--line); }
@@ -569,7 +569,7 @@ h1, h2, h3 {
 }
 
 /* Mobile navigation + stacked layout */
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   :root { --header-h: 70px; }
 
   .site-header {
@@ -856,7 +856,7 @@ main:focus { outline: none; }
 .footer-meta a:hover, .footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .contact-copy h2 { margin-bottom: 28px; }
 @media (max-width: 1100px) and (min-width: 981px) { .site-header { gap: 12px; padding-left: 22px; padding-right: 22px; } .main-nav { gap: 10px; letter-spacing: 0; } .brand-name { font-size: 18px; } .brand { gap: 8px; } }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 145px; }
  .hero h1 { max-width: 750px; }
  .page-hero { min-height: auto; padding-top: 130px; }
@@ -876,3 +876,33 @@ main:focus { outline: none; }
  .related-pages .hero-actions { align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+
+/* FIDES: quiet editorial treatment, shared with the existing warm palette. */
+.fides-feature { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(48px, 8vw, 130px); align-items: center; background: #24271f; }
+.fides-signature { border-right: 1px solid #6f715f; padding-right: 36px; }
+.fides-signature > span { display: block; font-family: 'Cormorant Garamond',serif; font-size: clamp(72px, 8vw, 124px); letter-spacing: .08em; line-height: 1; color: #d4c3a4; margin-bottom: 28px; }
+.fides-signature > p:last-child { color: #d5d4c9; font-size: 14px; }
+.fides-feature-copy h2 { font-size: clamp(38px,4.4vw,68px); line-height: 1.08; }
+.fides-feature-copy em, .fides-hero em { color: #dbc7a4; font-weight: 500; }
+.fides-feature-copy > p { color: #e0dfd6; max-width: 650px; margin-bottom: 30px; }
+.fides-hero { background: #24271f; }
+.fides-hero-grid { display: grid; grid-template-columns: 1fr .38fr; gap: 70px; align-items: end; }
+.fides-hero h1 { max-width: 900px; }
+.fides-lead { max-width: 650px; font-size: 20px; color: #e0dfd6; margin-bottom: 32px; }
+.fides-aside { border-top: 1px solid #818375; padding-top: 20px; padding-bottom: 8px; }
+.fides-aside > span { text-transform: uppercase; letter-spacing: .14em; font-size: 10px; color: #d4c3a4; }
+.fides-aside p { font-family: 'Cormorant Garamond',serif; font-size: 30px; line-height: 1.2; margin-top: 18px; }
+#approche { scroll-margin-top: 100px; }
+.fides-reflection .section-heading { max-width: none; margin-bottom: 46px; }
+.fides-reflection .section-heading h2 { max-width: 920px; margin-bottom: 22px; }
+.fides-questions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px; }
+.fides-questions article { border-top: 1px solid #b8ad9c; padding-top: 28px; }
+.fides-questions h3 { font-size: 34px; line-height: 1.1; }
+.fides-questions article > p:last-child { color: #5b564b; }
+.fides-presence { max-width: none; }
+.fides-details { display: grid; grid-template-columns: .65fr 1fr; gap: 80px; }
+.fides-details h2 { font-size: clamp(38px,4vw,60px); line-height: 1.1; }
+.fides-attribution { grid-column: 1 / -1; margin: 0; color: #b3aea4; font-size: 11px; }
+.footer-links { flex-wrap: wrap; gap: 14px 22px; }
+@media (max-width: 1200px) { .fides-feature, .fides-hero-grid, .fides-details { grid-template-columns: 1fr; gap: 40px; } .fides-signature { border-right: 0; padding-right: 0; border-bottom: 1px solid #6f715f; padding-bottom: 24px; } .fides-signature > span { font-size: 80px; } .fides-aside { max-width: 400px; } }
+@media (max-width: 640px) { .fides-questions { grid-template-columns: 1fr; gap: 24px; } .fides-lead { font-size: 17px; } .fides-feature-copy h2 { font-size: 38px; } .fides-hero h1 { font-size: clamp(42px,11vw,62px); } .fides-details .faq-item summary { font-size: 25px; } }
