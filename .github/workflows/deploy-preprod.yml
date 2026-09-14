@@ -1,0 +1,72 @@
+name: Déployer en préproduction
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Déploiement Infomaniak
+    runs-on: ubuntu-latest
+    environment: preprod
+
+    steps:
+      - name: Récupérer le site
+        uses: actions/checkout@v4
+
+      - name: Configurer le SEO de préproduction
+        run: |
+          python3 scripts/configure_seo.py \
+            --base-url https://preprod.lebonheurqueouai.ch/
+
+      - name: Préparer les fichiers à publier
+        run: |
+          mkdir -p .deploy
+
+          cp ./*.html .deploy/
+          cp robots.txt sitemap.xml site.webmanifest .deploy/
+          cp favicon.ico favicon.svg favicon-16x16.png favicon-32x32.png favicon-48x48.png .deploy/
+          cp apple-touch-icon.png .deploy/
+
+          mkdir -p .deploy/assets
+          rsync -a \
+            --exclude='*.md' \
+            assets/ .deploy/assets/
+
+      - name: Configurer la connexion SSH
+        env:
+          SSH_KEY: ${{ secrets.INFOMANIAK_SSH_KEY }}
+          HOST: ${{ secrets.INFOMANIAK_HOST }}
+          PORT: ${{ secrets.INFOMANIAK_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          ssh-keyscan -p "$PORT" "$HOST" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Déployer vers Infomaniak
+        env:
+          HOST: ${{ secrets.INFOMANIAK_HOST }}
+          USER: ${{ secrets.INFOMANIAK_USER }}
+          PORT: ${{ secrets.INFOMANIAK_PORT }}
+          TARGET: ${{ secrets.INFOMANIAK_PREPROD_PATH }}
+        run: |
+          rsync -az --delete \
+            --exclude='.htaccess' \
+            --exclude='.user.ini' \
+            --exclude='.infomaniak-maintenance.html' \
+            -e "ssh -p $PORT -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \
+            .deploy/ \
+            "$USER@$HOST:$TARGET/"
+
+      - name: Vérifier le site publié
+        run: |
+          curl --fail --silent --show-error \
+            https://preprod.lebonheurqueouai.ch/ \
+            > /dev/null
