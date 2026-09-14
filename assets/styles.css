@@ -901,7 +901,7 @@ body { min-width: 0; }
 @media (max-width: 1024px) {
   .hero, .page-hero-image { min-height: 640px; }
   .home-hero::before, .page-hero-image::before { background-position: var(--hero-position, center 56%); }
-  .home-hero { --hero-position: 62% center; }
+  .home-hero { --hero-position: 62% center; --hero-image: url('https://images.unsplash.com/photo-1742483612768-6fb8d921dc68?auto=format&fit=crop&q=82&w=1600'); }
   .hero-interieur { --hero-position: 60% center; }
   .hero-chemin { --hero-position: 54% center; }
   .hero-horizon { --hero-position: 55% center; }
@@ -913,9 +913,11 @@ body { min-width: 0; }
 }
 @media (max-width: 640px) {
   .hero { min-height: 0; }
+  .home-hero { --hero-image: url('https://images.unsplash.com/photo-1742483612768-6fb8d921dc68?auto=format&fit=crop&q=75&w=1200'); }
   .page-hero-image { min-height: 560px; }
   .hero-interieur, .hero-chemin, .hero-horizon, .hero-mission,
   .hero-parcours, .hero-elan, .hero-questions, .hero-contact { --hero-position: center; }
+  .hero-mission { --hero-position: 75% center; }
 }
 
 /* The new data notice uses the existing typefaces, spacing and light section palette. */
