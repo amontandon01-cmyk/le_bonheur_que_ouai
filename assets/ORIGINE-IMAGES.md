@@ -53,3 +53,7 @@ Les variantes reprennent les largeurs et proportions précédentes, sans nouveau
 ## Logo de la Méthode FIDES — 14 septembre 2026
 
 `brand/fides-logo.png` est le fichier PNG transparent de 1 200 × 1 200 pixels fourni par le propriétaire pour cette intégration. Il est conservé à l’identique, sans retouche ni modification des couleurs. Aucune image tierce ni nouvelle licence n’est ajoutée.
+
+## Rendu bronze du logo de la Méthode FIDES — 14 septembre 2026
+
+`brand/fides-logo-bronze.svg` contient le PNG original inchangé et lui applique uniquement un filtre de couleur bronze `#80623f`, déjà utilisé dans l’identité du site, et un renforcement de l’opacité du tracé pour un rendu plus net et uni. Le dessin, les lettres, la spirale du S, les proportions et les marges transparentes sont conservés. Le fichier source `brand/fides-logo.png` reste inchangé. Aucun asset généré ni aucune ressource externe n’est utilisé dans ce rendu.
