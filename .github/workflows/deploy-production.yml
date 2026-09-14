@@ -1,0 +1,97 @@
+name: Déployer en production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: "Tapez PRODUCTION pour confirmer la publication"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Déploiement production Infomaniak
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Vérifier la confirmation et la branche
+        run: |
+          if [ "${{ inputs.confirmation }}" != "PRODUCTION" ]; then
+            echo "Confirmation incorrecte."
+            exit 1
+          fi
+
+          if [ "$GITHUB_REF_NAME" != "main" ]; then
+            echo "La production doit être déployée depuis la branche main."
+            exit 1
+          fi
+
+      - name: Récupérer le site
+        uses: actions/checkout@v4
+
+      - name: Configurer le SEO de production
+        run: |
+          python3 scripts/configure_seo.py \
+            --base-url https://www.lebonheurqueouai.ch/ \
+            --production
+
+      - name: Préparer les fichiers à publier
+        run: |
+          mkdir -p .deploy
+
+          cp ./*.html .deploy/
+          cp robots.txt sitemap.xml site.webmanifest .deploy/
+          cp favicon.ico favicon.svg favicon-16x16.png favicon-32x32.png favicon-48x48.png .deploy/
+          cp apple-touch-icon.png .deploy/
+
+          mkdir -p .deploy/assets
+          rsync -a \
+            --exclude='*.md' \
+            assets/ .deploy/assets/
+
+      - name: Configurer la connexion SSH
+        env:
+          SSH_KEY: ${{ secrets.INFOMANIAK_SSH_KEY }}
+          HOST: ${{ secrets.INFOMANIAK_HOST }}
+          PORT: ${{ secrets.INFOMANIAK_PORT }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          ssh-keyscan -p "$PORT" "$HOST" >> ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Déployer vers le dossier de production
+        env:
+          HOST: ${{ secrets.INFOMANIAK_HOST }}
+          USER: ${{ secrets.INFOMANIAK_USER }}
+          PORT: ${{ secrets.INFOMANIAK_PORT }}
+          TARGET: ${{ secrets.INFOMANIAK_PROD_PATH }}
+        run: |
+          rsync -az --delete \
+            --exclude='.htaccess' \
+            --exclude='.user.ini' \
+            --exclude='.infomaniak-maintenance.html' \
+            -e "ssh -p $PORT -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes" \
+            .deploy/ \
+            "$USER@$HOST:$TARGET/"
+
+      - name: Vérifier les fichiers sur le serveur
+        env:
+          HOST: ${{ secrets.INFOMANIAK_HOST }}
+          USER: ${{ secrets.INFOMANIAK_USER }}
+          PORT: ${{ secrets.INFOMANIAK_PORT }}
+          TARGET: ${{ secrets.INFOMANIAK_PROD_PATH }}
+        run: |
+          ssh -p "$PORT" \
+            -i ~/.ssh/id_ed25519 \
+            -o IdentitiesOnly=yes \
+            "$USER@$HOST" \
+            "test -f '$TARGET/index.html' && test -f '$TARGET/sitemap.xml' && echo 'Fichiers de production présents.'"
