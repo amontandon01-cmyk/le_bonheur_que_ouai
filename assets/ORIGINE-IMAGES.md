@@ -1,19 +1,23 @@
 # Visuels d’ambiance ajoutés le 14 septembre 2026
 
-Les quatre visuels ci-dessous ont été générés pour ce projet avec l’outil de génération d’images OpenAI. Ce sont des ambiances illustratives : ils ne représentent ni les locaux de Mélanie, ni un client, ni un lieu ou un tournage identifié. Aucun portrait réel n’a été généré ou retouché.
+Les huit visuels ci-dessous ont été générés pour ce projet avec l’outil de génération d’images OpenAI. Ce sont des ambiances illustratives : ils ne représentent ni les locaux de Mélanie, ni un client, ni un lieu ou un tournage identifié. Aucun portrait réel n’a été généré ou retouché.
 
 | Fichiers | Ambiance | Pages |
 | --- | --- | --- |
-| `hero-interieur-640.webp`, `hero-interieur-1600.webp` | Deux fauteuils, matières naturelles, lumière chaude | Accompagnement privé, FAQ |
-| `hero-chemin-640.webp`, `hero-chemin-1600.webp` | Sentier en forêt, lumière douce, tons olive | Méthode FIDES, remise en mouvement |
-| `hero-horizon-640.webp`, `hero-horizon-1600.webp` | Rive de lac et horizon calme au matin | Transitions de vie, contact |
+| `hero-interieur-640.webp`, `hero-interieur-1600.webp` | Deux fauteuils, matières naturelles, lumière chaude | Accompagnement privé |
+| `hero-chemin-640.webp`, `hero-chemin-1600.webp` | Sentier en forêt, lumière douce, tons olive | Méthode FIDES |
+| `hero-horizon-640.webp`, `hero-horizon-1600.webp` | Rive de lac et horizon calme au matin | Transitions de vie |
 | `hero-mission-640.webp`, `hero-mission-1600.webp` | Coulisses d’un tournage, caméra, lumière chaude | Tournages et missions |
+| `hero-parcours-640.webp`, `hero-parcours-1600.webp` | Passage en pierre ouvert sur un jardin | Mélanie Vonlanthen |
+| `hero-elan-640.webp`, `hero-elan-1600.webp` | Herbes dans la brise et collines au matin | Remise en mouvement |
+| `hero-questions-640.webp`, `hero-questions-1600.webp` | Carnet, crayon et tasse près d’une fenêtre | FAQ |
+| `hero-contact-640.webp`, `hero-contact-1600.webp` | Fenêtre entrouverte, lin et lumière chaude | Contact |
 
 ## Droits et origine
 
 Il n’y a pas de licence de photographie tierce associée à ces créations. Leur utilisation relève des [conditions OpenAI applicables](https://openai.com/policies/eu-terms-of-use/), notamment de la section « Content » concernant les droits sur les sorties générées. Aucune licence Creative Commons, exclusivité ni garantie particulière de droit d’auteur n’est revendiquée. Aucune photo Unsplash supplémentaire n’a été téléchargée ou intégrée.
 
-Les images et le portrait antérieurs à cette intervention conservent leur provenance et leur statut existants.
+Les images et le portrait antérieurs à cette intervention conservent leur provenance et leur statut existants. Le portrait réel reste sur l’accueil uniquement ; chaque page intérieure utilise son propre fond, sans réutilisation sur une autre page.
 
 ## Versions web
 
