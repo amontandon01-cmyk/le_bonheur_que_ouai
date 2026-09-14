@@ -854,8 +854,9 @@ body { min-width: 0; }
 :root { --hero-min-height: min(860px, 100svh); }
 .hero, .page-hero-image { min-height: var(--hero-min-height); }
 .page-hero-image { position: relative; isolation: isolate; overflow: hidden; }
-.portrait-hero.page-hero-image { display: flex; padding-bottom: 64px; }
+.portrait-hero.page-hero-image { display: flex; align-items: stretch; padding-bottom: 64px; }
 .portrait-hero.page-hero-image > div { padding-bottom: 0; }
+.portrait-hero.page-hero-image > div > p:last-child { max-width: 760px; }
 .hero-interieur { --hero-image: url('hero-interieur-1600.webp'); }
 .hero-chemin { --hero-image: url('hero-chemin-1600.webp'); }
 .hero-horizon { --hero-image: url('hero-horizon-1600.webp'); }
