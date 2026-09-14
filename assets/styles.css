@@ -47,7 +47,7 @@ h1, h2, h3 {
   letter-spacing: .16em;
   text-transform: uppercase;
 }
-.eyebrow.dark { color: #777064; }
+.eyebrow.dark { color: #6c6559; }
 .button {
   display: inline-flex;
   align-items: center;
@@ -289,7 +289,7 @@ h1, h2, h3 {
 .context-grid,
 .context-grid article { border-color: rgba(255, 255, 255, .16); }
 .context-grid p { color: rgba(255, 255, 255, .63); }
-.context-grid span { color: rgba(255, 255, 255, .43); }
+.context-grid span { color: rgba(255, 255, 255, .46); }
 
 .profile {
   display: grid;
@@ -360,6 +360,7 @@ h1, h2, h3 {
 .format-meta { color: var(--accent); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
 .format-card > p:last-child { max-width: 520px; margin-top: auto; color: rgba(255, 255, 255, .64); font-size: 14px; }
 .format-card.featured { background: #211f1a; }
+.format-card > span { color: rgba(255, 255, 255, .5); }
 
 .editorial-list { display: grid; grid-template-columns: .75fr 1fr; gap: 100px; }
 .editorial-list h2 { font-size: clamp(44px, 5vw, 76px); }
@@ -887,3 +888,38 @@ body { min-width: 0; }
   .professional-experience { padding-left: 18px; }
 }
 @media (max-width: 370px) { :root { --hero-min-height: 1000px; } }
+
+/* Requested portrait and professional category; existing desktop heroes stay unchanged. */
+.parcours-portrait { width: min(100%, 420px); margin: 36px 0 0; }
+.parcours-portrait img { display: block; width: 100%; height: auto; }
+.nav-submenu .nav-professional { white-space: normal; }
+#reinsertion-reconversion { scroll-margin-top: var(--header-h); }
+@media (min-width: 1201px) { .route-grid-professional > :last-child { grid-column: 1 / -1; } }
+@media (max-width: 1200px) { .parcours-portrait { max-width: 350px; } }
+
+/* Mobile/tablet-only image heights and subject positioning. */
+@media (max-width: 1024px) {
+  .hero, .page-hero-image { min-height: 640px; }
+  .home-hero::before, .page-hero-image::before { background-position: var(--hero-position, center 56%); }
+  .home-hero { --hero-position: 62% center; }
+  .hero-interieur { --hero-position: 60% center; }
+  .hero-chemin { --hero-position: 54% center; }
+  .hero-horizon { --hero-position: 55% center; }
+  .hero-mission { --hero-position: 69% center; }
+  .hero-parcours { --hero-position: 54% center; }
+  .hero-elan { --hero-position: 62% center; }
+  .hero-questions { --hero-position: 58% center; }
+  .hero-contact { --hero-position: 64% center; }
+}
+@media (max-width: 640px) {
+  .hero { min-height: 0; }
+  .page-hero-image { min-height: 560px; }
+  .hero-interieur, .hero-chemin, .hero-horizon, .hero-mission,
+  .hero-parcours, .hero-elan, .hero-questions, .hero-contact { --hero-position: center; }
+}
+
+/* The new data notice uses the existing typefaces, spacing and light section palette. */
+.privacy-document { padding-top: 0; }
+.privacy-document > div { max-width: 860px; margin: auto; }
+.privacy-document h2 { font-size: clamp(30px, 3.5vw, 44px); }
+.privacy-document a { text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }

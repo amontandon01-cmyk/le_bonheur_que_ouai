@@ -1,12 +1,12 @@
 # Le Bonheur Qué Ouai
 
-Site statique de Mélanie Vonlanthen : coaching, accompagnement privé, transitions de vie, remise en mouvement et tournages / missions. Neuf pages HTML, sans étape de compilation.
+Site statique de Mélanie Vonlanthen : coaching, accompagnement privé, transitions de vie, remise en mouvement et tournages / missions. Dix pages HTML, sans étape de compilation.
 
 ## État de publication
 
-Le site officiel reste https://www.lebonheurqueouai.ch/. GitHub Pages reste durablement la version de travail publique ; aucune migration n’est prévue à ce stade. Chaque page contient `noindex,follow`. Le sitemap reste vide en préproduction. `robots.txt` autorise la lecture pour permettre aux moteurs de constater `noindex` (le fichier d'un projet GitHub Pages sous un sous-chemin ne contrôle pas les robots à la racine du domaine).
+Le site officiel reste https://www.lebonheurqueouai.ch/. À la demande du propriétaire du 14 septembre 2026, la version GitHub Pages est désormais ouverte à l’indexation. Ses dix pages utilisent leur URL GitHub Pages réelle comme canonical, avec `index,follow,max-image-preview:large` et un sitemap renseigné. `robots.txt` autorise la lecture et indique le sitemap ; le fichier d’un projet GitHub Pages sous un sous-chemin ne contrôle pas les robots à la racine du domaine.
 
-Les changements de cette version sont publiés sur GitHub Pages pour retours. Conserver la non-indexation de cette version de travail. Ne pas relancer la question d’une migration sans demande explicite.
+Les changements restent publiés sur GitHub Pages pour retours. Aucun changement de domaine ni de DNS n’est effectué dans cette intervention. Le futur remplacement du site officiel reste une opération distincte.
 
 ## Améliorations préparées
 
@@ -22,10 +22,10 @@ Les changements de cette version sont publiés sur GitHub Pages pour retours. Co
 
 Le script suivant actualise ensemble les URL canoniques, `og:url`, les identifiants et liens JSON-LD, les directives d'indexation, le sitemap et sa déclaration. Il ne configure ni le DNS ni le domaine GitHub Pages.
 
-Après confirmation du domaine, de son routage et des contenus :
+Configuration actuellement appliquée à GitHub Pages :
 
 ```sh
-python scripts/configure_seo.py --base-url https://www.lebonheurqueouai.ch/ --production
+python scripts/configure_seo.py --base-url https://amontandon01-cmyk.github.io/le_bonheur_que_ouai/ --production
 ```
 
 Pour conserver / rétablir la préproduction :

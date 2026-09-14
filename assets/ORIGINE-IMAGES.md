@@ -25,3 +25,9 @@ Les images et le portrait antérieurs à cette intervention conservent leur prov
 - Smartphone jusqu’à 640 pixels : recadrage de 640 × 800 pixels.
 - WebP, qualité 77 (sentier : 45 sur desktop, 55 sur smartphone), sans métadonnées personnelles ajoutées.
 - Décorations CSS locales avec voile sombre ; le contenu et les titres restent en HTML.
+
+## Icônes et portrait — 14 septembre 2026
+
+Le favicon SVG, les PNG 16/32/48 px, le fichier ICO, l’Apple Touch Icon et les icônes 192/512 px reprennent le symbole central exact de `brand/logo-original.png`, fourni par le propriétaire et déjà présent dans le projet. Le cercle extérieur détaillé est omis pour la lisibilité à petite taille. Fond transparent et teintes bronze existantes ; aucune nouvelle identité, photo ou licence tierce ajoutée.
+
+Le portrait rétabli sur la page Mélanie utilise les trois fichiers WebP existants issus de la photo `MELANIE-1.jpg` fournie par le propriétaire. Les images de fond existantes restent inchangées ; leurs ajustements de hauteur et de position sont limités aux écrans de 1 024 px et moins.
