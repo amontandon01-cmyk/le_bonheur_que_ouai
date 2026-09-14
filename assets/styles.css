@@ -846,3 +846,36 @@ main > .long-copy.centered { max-width: none; padding-left: max(var(--pad), calc
 body { min-width: 0; }
 
 .button { border-radius: 4px; }
+
+/* Requested additions: hero imagery, one CTA and the professional/privacy details. */
+.page-hero-image { position: relative; isolation: isolate; }
+.page-hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(90deg, rgba(12, 12, 10, .84), rgba(12, 12, 10, .74)), var(--hero-image);
+  background-size: cover;
+  background-position: center;
+}
+.hero-interieur { --hero-image: url('hero-interieur-1600.webp'); }
+.hero-chemin { --hero-image: url('hero-chemin-1600.webp'); }
+.hero-horizon { --hero-image: url('hero-horizon-1600.webp'); }
+.hero-mission { --hero-image: url('hero-mission-1600.webp'); }
+.soft.page-hero-image::before { background-position: center 66%; }
+.faq-hero.page-hero-image::before { background-position: center 40%; }
+.contact-hero.page-hero-image::before { background-position: center 62%; }
+.method-discover { display: table; margin-top: 0; }
+.professional-experience { padding-left: 24px; border-left: 1px solid var(--accent); }
+.privacy-section { padding-top: 48px; padding-bottom: 48px; }
+.privacy-inner { max-width: var(--max); margin: auto; padding-top: 28px; border-top: 1px solid var(--accent); display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 32px 64px; }
+.privacy-inner h2 { margin-bottom: 0; font-size: clamp(30px, 3vw, 42px); line-height: 1.1; }
+.privacy-inner p { margin-bottom: 0; }
+@media (max-width: 980px) { .privacy-inner { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .hero-interieur { --hero-image: url('hero-interieur-640.webp'); }
+  .hero-chemin { --hero-image: url('hero-chemin-640.webp'); }
+  .hero-horizon { --hero-image: url('hero-horizon-640.webp'); }
+  .hero-mission { --hero-image: url('hero-mission-640.webp'); }
+  .professional-experience { padding-left: 18px; }
+}
