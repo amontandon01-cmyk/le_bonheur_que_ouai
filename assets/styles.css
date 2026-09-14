@@ -896,6 +896,10 @@ body { min-width: 0; }
 #reinsertion-reconversion { scroll-margin-top: var(--header-h); }
 @media (min-width: 1201px) { .route-grid-professional > :last-child { grid-column: 1 / -1; } }
 @media (max-width: 1200px) { .parcours-portrait { max-width: 350px; } }
+@media (min-width: 1201px) {
+  .parcours-section { align-items: center; }
+  .parcours-section .parcours-portrait { margin-left: auto; margin-right: auto; }
+}
 
 /* Mobile/tablet-only image heights and subject positioning. */
 @media (max-width: 1024px) {
