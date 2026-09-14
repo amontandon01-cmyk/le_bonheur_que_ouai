@@ -924,6 +924,7 @@ body { min-width: 0; }
 .hero-elan { --hero-image: url('hero-elan-1600.webp'); }
 .hero-questions { --hero-image: url('hero-questions-1600.webp'); }
 .hero-contact { --hero-image: url('hero-contact-1600.webp'); }
+.hero-professionnel { --hero-image: url('hero-professionnel-1600.webp'); }
 .method-discover { display: table; margin-top: 0; }
 .professional-experience { padding-left: 24px; border-left: 1px solid var(--accent); }
 .privacy-section { padding-top: 48px; padding-bottom: 48px; }
@@ -943,6 +944,7 @@ body { min-width: 0; }
   .hero-elan { --hero-image: url('hero-elan-640.webp'); }
   .hero-questions { --hero-image: url('hero-questions-640.webp'); }
   .hero-contact { --hero-image: url('hero-contact-640.webp'); }
+  .hero-professionnel { --hero-image: url('hero-professionnel-640.webp'); }
   .professional-experience { padding-left: 18px; }
 }
 @media (max-width: 370px) { :root { --hero-min-height: 1000px; } }

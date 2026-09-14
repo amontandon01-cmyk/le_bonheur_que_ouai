@@ -57,3 +57,8 @@ Les variantes reprennent les largeurs et proportions précédentes, sans nouveau
 ## Rendu bronze du logo de la Méthode FIDES — 14 septembre 2026
 
 `brand/fides-logo-bronze.svg` contient le PNG original inchangé et lui applique uniquement un filtre de couleur bronze `#80623f`, déjà utilisé dans l’identité du site, et un renforcement de l’opacité du tracé pour un rendu plus net et uni. Le dessin, les lettres, la spirale du S, les proportions et les marges transparentes sont conservés. Le fichier source `brand/fides-logo.png` reste inchangé. Aucun asset généré ni aucune ressource externe n’est utilisé dans ce rendu.
+
+## Page professionnelle et logo vectoriel — 14 septembre 2026
+
+- `hero-professionnel-1600.webp` (1 600 × 900) et `hero-professionnel-640.webp` (640 × 800) : ambiance illustrative d’un escalier en pierre et d’une rampe bronze dans une lumière douce, générée avec OpenAI pour la page Réinsertion & reconversion professionnelle. Ce visuel ne représente aucun local identifié. Même statut d’utilisation que les autres visuels générés ci-dessus ; aucune licence tierce revendiquée. WebP qualité 77, affichage local avec le voile existant du site.
+- `brand/fides-logo-bronze.svg` : le PNG intégré est remplacé par des courbes vectorielles tracées depuis la silhouette du fichier original fourni. La teinte `#80623f`, le canevas 1 200 × 1 200, les proportions, les lettres et la spirale sont conservés. Le PNG source reste inchangé. VTracer est utilisé uniquement comme outil de préparation, sans ajout de dépendance au site.
