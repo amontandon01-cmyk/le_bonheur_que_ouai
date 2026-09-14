@@ -31,3 +31,21 @@ Les images et le portrait antérieurs à cette intervention conservent leur prov
 Le favicon SVG, les PNG 16/32/48 px, le fichier ICO, l’Apple Touch Icon et les icônes 192/512 px reprennent le symbole central exact de `brand/logo-original.png`, fourni par le propriétaire et déjà présent dans le projet. Le cercle extérieur détaillé est omis pour la lisibilité à petite taille. Fond transparent et teintes bronze existantes ; aucune nouvelle identité, photo ou licence tierce ajoutée.
 
 Le portrait rétabli sur la page Mélanie utilise les trois fichiers WebP existants issus de la photo `MELANIE-1.jpg` fournie par le propriétaire. Les photographies de fond existantes sont conservées ; leurs ajustements de hauteur et de position sont limités aux écrans de 1 024 px et moins. La même image Unsplash de l’accueil est demandée en 1 200 px / qualité 75 sur smartphone et 1 600 px / qualité 82 sur tablette, via le service d’images déjà utilisé. Son URL desktop (2 200 px / qualité 88) reste inchangée.
+
+## Image d’accueil rapatriée — 14 septembre 2026
+
+La photographie de l’accueil déjà utilisée (promenade ombragée au bord d’un lac, voiliers et deux personnes marchant) est désormais servie localement. Aucun changement de photographie, de position CSS, de voile ou de proportions n’est effectué.
+
+- Source : Unsplash, identifiant `photo-1742483612768-6fb8d921dc68`.
+- URL exacte de récupération : [image précédemment chargée par le site](https://images.unsplash.com/photo-1742483612768-6fb8d921dc68?auto=format&fit=crop&q=88&w=2200).
+- Auteur : non identifié dans les informations disponibles ; aucune attribution supposée.
+- Récupération : 14 septembre 2026, JPEG de 2 200 × 1 498 pixels, sans métadonnée d’auteur.
+- Licence : [Unsplash License](https://unsplash.com/license), également décrite dans la [section 5 des conditions Unsplash](https://unsplash.com/terms). Elle autorise le téléchargement, la modification et l’utilisation, y compris commerciale, sans attribution obligatoire ; ce n’est pas une licence Creative Commons.
+
+| Fichier local | Dimensions | Qualité WebP |
+| --- | --- | --- |
+| `hero-accueil-2200.webp` | 2 200 × 1 498 | 84 |
+| `hero-accueil-1600.webp` | 1 600 × 1 089 | 82 |
+| `hero-accueil-1200.webp` | 1 200 × 817 | 75 |
+
+Les variantes reprennent les largeurs et proportions précédentes, sans nouveau recadrage. Les URL Unsplash ci-dessus documentent la provenance ; elles ne sont plus utilisées comme ressources par le HTML, le CSS ou le JavaScript du site.
