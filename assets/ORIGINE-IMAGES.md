@@ -49,3 +49,7 @@ La photographie de l’accueil déjà utilisée (promenade ombragée au bord d�
 | `hero-accueil-1200.webp` | 1 200 × 817 | 75 |
 
 Les variantes reprennent les largeurs et proportions précédentes, sans nouveau recadrage. Les URL Unsplash ci-dessus documentent la provenance ; elles ne sont plus utilisées comme ressources par le HTML, le CSS ou le JavaScript du site.
+
+## Logo de la Méthode FIDES — 14 septembre 2026
+
+`brand/fides-logo.png` est le fichier PNG transparent de 1 200 × 1 200 pixels fourni par le propriétaire pour cette intégration. Il est conservé à l’identique, sans retouche ni modification des couleurs. Aucune image tierce ni nouvelle licence n’est ajoutée.

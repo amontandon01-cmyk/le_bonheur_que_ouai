@@ -279,6 +279,7 @@ h1, h2, h3 {
 .intro-copy p + p,
 .long-copy p + p { margin-top: 24px; }
 .long-copy { max-width: 700px; font-size: 18px; }
+.fides-logo { width: 100%; max-width: 480px; height: auto; margin-inline: auto; }
 .long-copy.centered,
 .centered { max-width: 900px; margin: auto; }
 .light-copy { color: rgba(255, 255, 255, .72); }
@@ -528,6 +529,9 @@ h1, h2, h3 {
 }
 .site-footer strong { color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 24px; }
 .site-footer p { margin: 5px 0 0; }
+.site-footer .footer-youtube { margin-top: 18px; }
+.footer-youtube a { text-decoration: underline; text-underline-offset: 4px; }
+.footer-youtube span { display: block; margin-top: 5px; }
 .footer-links { display: flex; gap: 22px; align-items: flex-start; }
 .photo-credits {
   grid-column: 1 / -1;
