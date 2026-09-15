@@ -418,6 +418,14 @@ h1, h2, h3 {
 .format-card.featured { background: #211f1a; }
 .format-card > span { color: rgba(255, 255, 255, .5); }
 
+.pricing-table { width: 100%; margin: 28px 0; border-collapse: collapse; table-layout: fixed; font-size: 15px; }
+.pricing-table th, .pricing-table td { padding: 20px 20px 20px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.pricing-table th { font-weight: 500; }
+.pricing-table thead { border-top: 1px solid var(--line); }
+.pricing-table thead th { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.pricing-table th:first-child { width: 42%; }
+.pricing-table th:last-child, .pricing-table td:last-child { padding-right: 0; }
+
 .editorial-list { display: grid; grid-template-columns: .75fr 1fr; gap: 100px; }
 .editorial-list h2 { font-size: clamp(44px, 5vw, 76px); }
 .editorial-list ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
