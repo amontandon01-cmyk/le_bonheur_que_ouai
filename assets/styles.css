@@ -422,7 +422,7 @@ h1, h2, h3 {
 .pricing-table th, .pricing-table td { padding: 20px 20px 20px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
 .pricing-table th { font-weight: 500; }
 .pricing-table thead { border-top: 1px solid var(--line); }
-.pricing-table thead th { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.pricing-table thead th { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
 .pricing-table th:first-child { width: 42%; }
 .pricing-table th:last-child, .pricing-table td:last-child { padding-right: 0; }
 
