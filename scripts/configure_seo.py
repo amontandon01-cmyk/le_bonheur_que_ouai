@@ -25,6 +25,8 @@ def configure(base_url, production=False):
         # Limit replacement to metadata, preserving existing image URLs and editorial links.
         content = re.sub(r'(<link rel="canonical" href=")[^"]+(">)', lambda m: m[1] + url + m[2], content)
         content = re.sub(r'(<meta property="og:url" content=")[^"]+(">)', lambda m: m[1] + url + m[2], content)
+        content = re.sub(r'(<meta property="og:image" content=")([^"]+)(">)',
+                         lambda m: m[1] + (base + m[2][len(old_base):] if m[2].startswith(old_base) else m[2]) + m[3], content)
         def rewrite_graph(match):
             def visit(value):
                 if isinstance(value, dict):

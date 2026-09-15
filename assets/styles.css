@@ -382,7 +382,8 @@ h1, h2, h3 {
 .profile-stats { margin-top: 55px; border-top: 1px solid var(--line); }
 .profile-stats > div {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: minmax(190px, 35%) minmax(0, 1fr);
+  column-gap: 28px;
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid var(--line);
@@ -453,6 +454,8 @@ h1, h2, h3 {
 .stats-band span { color: rgba(255, 255, 255, .55); font-size: 12px; }
 
 .faq-section { max-width: 1100px; margin: auto; }
+.faq-group + .faq-group { margin-top: 64px; }
+.faq-group > h2 { margin-bottom: 28px; font-size: clamp(34px, 4vw, 48px); }
 .faq-item { border-top: 1px solid var(--line); }
 .faq-item:last-child { border-bottom: 1px solid var(--line); }
 .faq-item summary {
@@ -979,6 +982,9 @@ body { min-width: 0; }
   .hero { min-height: 0; }
   .home-hero { --hero-image: url('hero-accueil-1200.webp'); }
   .page-hero-image { min-height: 560px; }
+  .page-hero-image.contact-hero { min-height: 0; padding-bottom: 32px; }
+  .contact-page { padding-top: 36px; gap: 40px; }
+  .contact-page .contact-panel { grid-row: 1; }
   .hero-interieur, .hero-chemin, .hero-horizon, .hero-mission,
   .hero-parcours, .hero-elan, .hero-questions, .hero-contact { --hero-position: center; }
   .hero-mission { --hero-position: 75% center; }
