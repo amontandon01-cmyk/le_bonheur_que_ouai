@@ -67,3 +67,13 @@ document.querySelectorAll('img').forEach(image => {
   image.addEventListener('contextmenu', event => event.preventDefault());
   image.addEventListener('dragstart', event => event.preventDefault());
 });
+
+// Keep question marks with the preceding word, including newly added page copy.
+const questionText = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+while (questionText.nextNode()) {
+  const node = questionText.currentNode;
+  if (!node.parentElement.closest('script, style, pre, code, textarea, [contenteditable]')) {
+    const text = node.nodeValue.replace(/[ \t\r\n]+(?=\?|»\s*\?)/g, '\u00a0');
+    if (text !== node.nodeValue) node.nodeValue = text;
+  }
+}
