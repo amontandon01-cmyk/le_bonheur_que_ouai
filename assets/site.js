@@ -60,3 +60,10 @@ document.addEventListener('keydown', event => {
   else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
 });
 mobile.addEventListener('change', () => closeMenu());
+
+// Discourage casual image saving; public assets remain accessible.
+document.querySelectorAll('img').forEach(image => {
+  image.draggable = false;
+  image.addEventListener('contextmenu', event => event.preventDefault());
+  image.addEventListener('dragstart', event => event.preventDefault());
+});
